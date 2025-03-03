@@ -23,8 +23,5 @@ main:
   - title: "CV"
     url: /cv/
     
-  - title: "Guide"
-    url: /markdown/
-    
-    - title: "Grades"  # 添加这一行
+  - title: "Grades"
     url: /grades/
