@@ -26,3 +26,5 @@ main:
   - title: "Guide"
     url: /markdown/
     
+    - title: "Grades"  # 添加这一行
+    url: /grades/
