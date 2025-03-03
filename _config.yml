@@ -23,13 +23,13 @@ repository               : "academicpages/academicpages.github.io"
 author:
   # Biographic information
   avatar           : "BCF8C76A-A95D-4FC4-96CF-B2620A936E1A_1_105_c.jpeg"
-  name             : "Your Sidebar Name"
+  name             : "Haoyu Gu"
   pronouns         : # example: "she/her"  
   bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  location         : "Guangzhou, China"
+  employer         : "South China University of Technology"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "ghy20050104@gmail.com" 
 
   # Academic websites
   arxiv            : # URL - Update with the correct link to your profile
