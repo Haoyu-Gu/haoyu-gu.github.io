@@ -12,8 +12,9 @@ site_theme               : "default"
 title                    : "Haoyu Gu"
 title_separator          : "-"
 name                     : &name "Haoyu Gu"
-description              : &description| Undergraduate Student Major in Artificial Intelligence. 
-                          Interested in both CS and EE."
+description: |
+  Undergraduate Student Major in Artificial Intelligence.  
+  Interested in both CS and EE.
 url                      : https://haoyu-gu.github.io/ 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
