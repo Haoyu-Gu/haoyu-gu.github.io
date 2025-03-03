@@ -12,7 +12,7 @@ site_theme               : "default"
 title                    : "Haoyu Gu"
 title_separator          : "-"
 name                     : &name "Haoyu Gu"
-description              : &description "Undergraduate Student Major in Artificial Intelligence. Interested in CS and EE"
+description              : &description "Undergraduate Student Major in Artificial Intelligence. Interested in CS and EE."
 url                      : https://haoyu-gu.github.io/ 
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -25,7 +25,7 @@ author:
   avatar           : "02.png"
   name             : "Haoyu Gu / 顾昊瑜"
   pronouns         : "he/his"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Undergraduate Student Major in Artificial Intelligence, School of Future Technology. Interested in CS and EE."
   location         : "Guangzhou, China"
   employer         : "South China University of Technology"
   uri              : # URL
