@@ -15,7 +15,7 @@ name                     : &name "Haoyu Gu"
 description: |
   Undergraduate Student Major in Artificial Intelligence.  
   Interested in both CS and EE.
-url                      : https://haoyu-gu.github.io
+url                      : "https://haoyu-gu.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
 
