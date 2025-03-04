@@ -23,5 +23,5 @@ main:
   - title: "CV"
     url: /cv/
     
-  - title: "Grades"
-    url: /grades/
+  # - title: "Grades"
+  #   url: /grades/
