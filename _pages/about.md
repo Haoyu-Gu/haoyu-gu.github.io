@@ -44,7 +44,7 @@ Let's build something interesting together! 🚀
 ## 📘 Core Courses
 
 - Calculus (4.0), C++ Advanced Programming (4.0), Python Programming (4.0)
-- Linear Algebra（4.0), Probability & Mathematical Statistics (4.0), Complex Variable (4.0)
+- Linear Algebra (4.0), Probability & Mathematical Statistics (4.0), Complex Variable (4.0)
 - Data Structures (4.0), Discrete Mathematics (4.0), Machine Learning (4.0)
 - Circuits & Analog Electronics (4.0), Signals & Systems (4.0), General Physics (4.0)
 - ✨ *... and more to come!* ✨
