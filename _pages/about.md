@@ -1,5 +1,5 @@
 ---
-permalink: /about/
+haoyu-gu.github.io/about/: /about/
 title: "About Me"
 author_profile: true
 ---
