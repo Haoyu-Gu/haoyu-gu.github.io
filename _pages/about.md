@@ -20,7 +20,7 @@ Let's build something interesting together! 🚀
 | --- | --- | --- | --- |
 | 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.96/4.00** (Rank **2/90**) |
 | 2023 | South China University of Technology<br>*Shien-Ming Wu School of Intelligent Engerineering* | Robotic Engineering | — |
-| 2020–2023 | Nanjing Ninghai High School | --- | 🥇 Gaokao: **644** (Top 3) |
+| 2020–2023 | 南京市宁海中学 | 物化生 | 🥇 Gaokao: **644** (Top 3) |
 
 ---
 
