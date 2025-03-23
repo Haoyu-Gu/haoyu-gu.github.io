@@ -7,7 +7,7 @@ author_profile: true
 
 {% include base_path %}
 
-👋 **Hi, I'm Haoyu Gu (顾昊瑜)!** I'm currently pursuing my bachelor's degree in **Artificial Intelligence** at the **School of Future Technology**, South China University of Technology (SCUT). 
+👋 **Hi, I'm Haoyu Gu (顾昊瑜)!** I'm currently pursuing my bachelor's degree in Artificial Intelligence at the School of Future Technology, South China University of Technology (SCUT). 
 
 I'm passionate about **AI**, **Brain-computer interfaces (EEG-based music generation)**, and **Multimodal generative models**.  
 Let's build something interesting together! 🚀
@@ -18,8 +18,8 @@ Let's build something interesting together! 🚀
 
 | 📅 Year | 🏫 Institution | 📚 Major | 🏅 GPA & Rank |
 | --- | --- | --- | --- |
-| 2024–Present | South China University of Technology (SCUT)<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.96/4.00** (Rank **2/90**) |
-| 2023 | SCUT<br>*Wu Shien-Ming School* | Robotic Engineering | — |
+| 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.96/4.00** (Rank **2/90**) |
+| 2023 | South China University of Technology<br>*Shien-Ming Wu School of Intelligent Engerineering* | Robotic Engineering | — |
 | 2020–2023 | Nanjing Ninghai High School | --- | 🥇 Gaokao: **644** (Top 3) |
 
 ---
