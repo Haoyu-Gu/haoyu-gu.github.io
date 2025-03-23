@@ -1,8 +1,11 @@
 ---
-haoyu-gu.github.io/about/: /about/
+layout: archive
 title: "About Me"
+permalink: /about/
 author_profile: true
 ---
+
+{% include base_path %}
 # Hi, I'm Haoyu Gu 👋
 
 🎓 I'm currently an undergraduate student majoring in Artificial Intelligence at the School of Future Technology, South China University of Technology (SCUT).  
