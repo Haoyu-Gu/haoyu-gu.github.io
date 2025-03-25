@@ -51,7 +51,7 @@ Let's build something interesting together! 🚀
 
 ## 💬 Languages & Skills
 
-- 🇬🇧 English: **CET-4 (600)**, **CET-6 (548)**
+- 🇬🇧 English: **CET-4**, **CET-6**
 - 💻 Coding: Python, C++, MATLAB, Git, Jupyter
 - ⚙️ Interests:  EEG signals, AI-generated music
 
