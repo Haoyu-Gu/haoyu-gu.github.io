@@ -66,7 +66,7 @@ Let's build something interesting together! 🚀
 
 ---
 
-## 🧑‍🤝‍🧑 My Friends!
+## 🧑‍🤝‍🧑 My Friends 😊
 
 - **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
 - **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
