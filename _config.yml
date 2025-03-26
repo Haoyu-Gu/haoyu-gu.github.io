@@ -14,7 +14,6 @@ title_separator          : "-"
 name                     : &name "Haoyu Gu"
 description: |
   Undergraduate Student Major in Artificial Intelligence.  
-  Interested in both CS and EE.
 url                      : "https://haoyu-gu.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -27,7 +26,7 @@ author:
   avatar           : "02.png"
   name             : "Haoyu Gu / 顾昊瑜"
   pronouns         : "he/his"  
-  bio              : "Undergraduate Student Major in AI, School of Future Technology.  <br> Interested in both CS and EE."
+  bio              : "Undergraduate Student Major in AI, School of Future Technology. "
   location         : "Guangzhou, China"
   employer         : "South China University of Technology"
   uri              : # URL
