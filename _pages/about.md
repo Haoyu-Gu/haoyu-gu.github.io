@@ -13,6 +13,14 @@ I'm passionate about **AI**, **Brain-computer interfaces (EEG-based music genera
 Let's build something interesting together! 🚀
 
 ---
+## 🧑‍🤝‍🧑 My Friends 😊
+
+- **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
+- **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
+- **Kane Wang**: [sitongwang-nj.github.io](https://sitongwang-nj.github.io)
+- **Zicheng Zeng**: [zczeng.com](https://zczeng.com)
+
+---
 
 ## 🎓 Education
 
@@ -66,11 +74,6 @@ Let's build something interesting together! 🚀
 
 ---
 
-## 🧑‍🤝‍🧑 My Friends 😊
 
-- **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
-- **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
-- **Kane Wang**: [sitongwang-nj.github.io](https://sitongwang-nj.github.io)
-- **Zicheng Zeng**: [zczeng.com](https://zczeng.com)
 
 ✨ **Thanks for visiting!** Feel free to connect and say hello! 👋😄
