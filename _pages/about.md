@@ -13,20 +13,13 @@ I'm passionate about **AI**, **Brain-computer interfaces (EEG-based music genera
 Let's build something interesting together! 🚀
 
 ---
-## 🧑‍🤝‍🧑 My Friends 😊
 
-- **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
-- **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
-- **Kane Wang**: [sitongwang-nj.github.io](https://sitongwang-nj.github.io)
-- **Zicheng Zeng**: [zczeng.com](https://zczeng.com)
-
----
 
 ## 🎓 Education
 
 | 📅 Year | 🏫 Institution | 📚 Major | 🏅 GPA & Rank |
 | --- | --- | --- | --- |
-| 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.9+/4.00** |
+| 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.9+/4.00**  3/91|
 | 2023 | South China University of Technology<br>*Shien-Ming Wu School of Intelligent Engerineering* | Robotic Engineering | — |
 | 2020–2023 | 南京市宁海中学 | 物化生 | 🥇 Gaokao: **644** (Top 3) |
 
@@ -74,6 +67,13 @@ Let's build something interesting together! 🚀
 
 ---
 
+## 🧑‍🤝‍🧑 My Friends 😊
 
+- **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
+- **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
+- **Kane Wang**: [sitongwang-nj.github.io](https://sitongwang-nj.github.io)
+- **Zicheng Zeng**: [zczeng.com](https://zczeng.com)
+
+---
 
 ✨ **Thanks for visiting!** Feel free to connect and say hello! 👋😄
