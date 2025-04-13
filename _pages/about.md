@@ -72,7 +72,6 @@ Let's build something interesting together! 🚀
 - **Mike Meng**: [mikemengtr.github.io](https://mikemengtr.github.io)
 - **Walker Sun**: [zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
 - **Kane Wang**: [sitongwang-nj.github.io](https://sitongwang-nj.github.io)
-- **Zicheng Zeng**: [zczeng.com](https://zczeng.com)
 
 ---
 
