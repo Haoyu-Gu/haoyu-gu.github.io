@@ -22,16 +22,16 @@ otherlang: /about/
 | --- | --- | --- | --- |
 | 2024–至今 | 华南理工大学<br>*未来技术学院* | 人工智能 | 🌟 **3.9+/4.00**（年级排名第 3/91）|
 | 2023 | 华南理工大学<br>*吴贤铭智能工程学院* | 机器人工程 | — |
-| 2020–2023 | 南京市宁海中学 | 物化生 | 🥇 高考：**644**（全省前3%） |
+| 2020–2023 | 南京市宁海中学 | 物化生 | 🥇 高考：**644**（前3） |
 
 ---
 
 ## 🏆 奖项与荣誉
 
-- 🥇 **校数学竞赛一等奖**（2024）
+- 🥇 **华南理工大学数学竞赛一等奖**（2024）
 - 🥈 **全国大学生数学建模竞赛广东赛区二等奖**（2024）
-- 🥈 **嵌入式系统设计竞赛华南区二等奖**（2024）
-- 🥉 **全国大学生数学竞赛广东赛区三等奖**（2023）
+- 🥈 **嵌入式系统设计竞赛南部赛区二等奖**（2024）
+- 🥉 **全国大学生数学竞赛广东赛区二等奖**（2024）
 
 ---
 
@@ -45,7 +45,7 @@ otherlang: /about/
 
 ## 📘 主修课程
 
-- 微积分、C++高级程序设计、Python程序设计  
+- 微积分、C++高级程序设计、Python语言程序设计  
 - 线性代数、概率论与数理统计、复变函数  
 - 数据结构、离散数学、机器学习  
 - 电路与模拟电子技术、信号与系统、大学物理  
@@ -72,9 +72,9 @@ otherlang: /about/
 
 ## 🧑‍🤝‍🧑 我的朋友们 😊
 
-- **Mike Meng**：[mikemengtr.github.io](https://mikemengtr.github.io)
-- **Walker Sun**：[zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
-- **Kane Wang**：[sitongwang-nj.github.io](https://sitongwang-nj.github.io)
+- **孟庭冉**：[mikemengtr.github.io](https://mikemengtr.github.io)
+- **孙振宇**：[zhenyusun-walker.github.io](https://zhenyusun-walker.github.io)
+- **汪思佟**：[sitongwang-nj.github.io](https://sitongwang-nj.github.io)
 
 ---
 
