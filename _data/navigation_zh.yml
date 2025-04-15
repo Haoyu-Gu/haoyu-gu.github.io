@@ -1,0 +1,27 @@
+# The following is the order of the links in the header of the website.
+#
+# Changing the order here will adjust the order and you can also add additional
+# links. Removing a link prevents it from showing in the header, but does not
+# prevent it from being included in the site.
+
+main:
+  - title: "论文"
+    url: /zh/publications/
+
+  - title: "演讲"
+    url: /zh/talks/
+
+  - title: "教学"
+    url: /zh/teaching/
+
+  - title: "作品集"
+    url: /zh/portfolio/
+
+  - title: "博客"
+    url: /zh/year-archive/
+
+  - title: "简历"
+    url: /zh/cv/
+
+  - title: "English"
+    url: /
