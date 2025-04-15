@@ -1,4 +1,3 @@
-nav: main
 ---
 layout: archive
 title: "👋 关于我"
@@ -6,6 +5,7 @@ permalink: /zh/about/
 author_profile: true
 lang: zh
 otherlang: /about/
+nav: main
 ---
 
 {% include base_path %}

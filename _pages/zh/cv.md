@@ -1,10 +1,10 @@
-nav: main
 
 ---
 layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
+nav: main
 redirect_from:
   - /resume
 ---
