@@ -1,3 +1,5 @@
+nav: main
+
 ---
 permalink: /terms/
 title: "Terms and Privacy Policy"

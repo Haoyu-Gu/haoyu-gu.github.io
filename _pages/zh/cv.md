@@ -1,3 +1,5 @@
+nav: main
+
 ---
 layout: archive
 title: "CV"

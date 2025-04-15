@@ -1,3 +1,4 @@
+nav: main
 ---
 layout: archive
 title: "👋 关于我"
