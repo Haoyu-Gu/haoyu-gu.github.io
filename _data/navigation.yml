@@ -22,6 +22,3 @@ main:
     
   - title: "CV"
     url: /cv/
-
-  - title: "中文"
-    url: /zh/  # 这是你设定的中文主页路径
