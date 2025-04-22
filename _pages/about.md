@@ -7,9 +7,11 @@ author_profile: true
 
 {% include base_path %}
 
-👋 **Hi, I'm Haoyu Gu (顾昊瑜)!** I'm currently pursuing my bachelor's degree in Artificial Intelligence at the School of Future Technology, South China University of Technology (SCUT). 
+👋 **Hi, I'm Haoyu Gu (顾昊瑜)!** I'm currently pursuing my bachelor's degree in Artificial Intelligence at the School of Future Technology, South China University of Technology (SCUT).  
 
-I'm passionate about **AI**, **Brain-computer interfaces (EEG-based music generation)**, and **Multimodal generative models**.  
+📍 Based in Guangzhou during the semester, and in Nanjing during vacations.
+
+I'm passionate about **Signal Processing**, **Multimodal Generative AI**, and **Diffusion and Normalizing Flows**.  
 Let's build something interesting together! 🚀
 
 ---
@@ -19,43 +21,40 @@ Let's build something interesting together! 🚀
 
 | 📅 Year | 🏫 Institution | 📚 Major | 🏅 GPA & Rank |
 | --- | --- | --- | --- |
-| 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.9+/4.00**  (Rank 3/91)|
-| 2023 | South China University of Technology<br>*Shien-Ming Wu School of Intelligent Engerineering* | Robotic Engineering | — |
-| 2020–2023 | Nanjing Ninghai High School | Physics, Chemistry & Biology | 🥇 Gaokao: **644** (Top 3) |
+| 2024–Present | South China University of Technology<br>*School of Future Technology* | Artificial Intelligence | 🌟 **3.9+/4.00**  (Rank 2/90)|
+| 2023 Fall Semester | South China University of Technology<br>*Shien-Ming Wu School of Intelligent Engerineering* | Robotic Engineering | — |
+| 2020–2023 | Nanjing Ninghai High School | Physics, Chemistry & Biology | 🥇 Gaokao: **644** (Top 5% in Jiangsu) |
 
 ---
 
 ## 🏆 Awards & Honors
 
-- 🥇 **First Prize**, SCUT Mathematics Competition (2024)
+- 🥇 **First Prize**, SCUT Mathematics Competition (2024)  
+  *First student from the School of Future Technology to win the First Prize since its establishment.*
 - 🥈 **Second Prize**, National Undergraduate Mathematical Modeling Competition, Guangdong (2024)
 - 🥈 **Second Prize**, Embedded Chip & System Design Competition, Southern Region (2024)
-- 🥉 **Third Prize**, National Undergraduate Mathematics Competition, Guangdong (2023)
-
 ---
 
 ## 🧠 Research Interests
 
-- 🧬 Brain-Computer Interface (BCI) & EEG-based music generation
-- 🎨 Generative AI (images, audio, text)
-- 📐 Mathematical modeling & optimization
+- 📶 Signal Processing & Analysis
+- 🎨 Generative AI (Diffusion, Normalizing Flows)
+- 📐 Mathematical Modeling & Optimization
 
 ---
 
 ## 📘 Core Courses
 
-- Calculus , C++ Advanced Programming , Python Programming 
-- Linear Algebra , Probability & Mathematical Statistics , Complex Variable 
-- Data Structures , Discrete Mathematics , Machine Learning 
-- Circuits & Analog Electronics , Signals & Systems , General Physics 
-- ✨ *... and more to come!* ✨
+- **Mathematics**: Calculus, Linear Algebra, Probability & Mathematical Statistics, Complex Variable
+- **Programming**: C++ Advanced Programming, Python Programming, Data Structures, Discrete Mathematics
+- **Artificial Intelligence**: Machine Learning, Introduction to Artificial Intelligence
+- **Electronics & Physics**: Circuits & Analog Electronics, Signals & Systems, General Physics
 
 ## 💬 Languages & Skills
 
-- 🇬🇧 English: **CET-4**, **CET-6**
-- 💻 Coding: Python, C++, MATLAB, Git, Jupyter
-- ⚙️ Interests:  EEG signals, AI-generated music
-
+- **Languages**: English (CET-4, CET-6)
+- **Programming Languages**: Python, C++
+- **Tools**: MATLAB, Git, Jupyter
 ---
 
 ## 📮 Get in Touch!
