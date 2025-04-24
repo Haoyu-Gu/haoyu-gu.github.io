@@ -30,7 +30,6 @@ Let's build something interesting together! 🚀
 ## 🏆 Awards & Honors
 
 - 🥇 **First Prize**, SCUT Mathematics Competition (2024)  
-  *First student from the School of Future Technology to win the First Prize since its establishment.*
 - 🥈 **Second Prize**, National Undergraduate Mathematical Modeling Competition, Guangdong (2024)
 - 🥈 **Second Prize**, Embedded Chip & System Design Competition, Southern Region (2024)
 ---
