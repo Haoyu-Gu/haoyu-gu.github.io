@@ -32,7 +32,7 @@ Let's build something interesting together! 🚀
 - 🥇 **First Prize**, SCUT Mathematics Competition (2024)  
 - 🥈 **Second Prize**, National Undergraduate Mathematical Modeling Competition, Guangdong (2024)  
 - 🥈 **Second Prize**, Embedded Chip & System Design Competition, Southern Region (2024)  
-- 🥈 **Second Prize**, Lanqiao Cup Software Competition C++ Group A, Provincial Level (2025)
+- 🥈 **Second Prize**, Lanqiao Cup Software Competition C++ Group A, Guangdong (2025)
 
 ---
 
