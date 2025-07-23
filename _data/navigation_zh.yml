@@ -1,0 +1,15 @@
+main:
+  - title: "关于"
+    url: /zh/about/
+  - title: "论文"
+    url: /zh/publications/
+  - title: "教学"
+    url: /zh/teaching/
+  - title: "演讲"
+    url: /zh/talks/
+  - title: "简历"
+    url: /zh/cv/
+  - title: "博客"
+    url: /zh/year-archive/
+  - title: "English"
+    url: /
