@@ -947,11 +947,11 @@ html {
   }
 }
 
-/* 动画关键帧定义 */
+/* 动画关键帧定义 - 增强版本 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(60px);
   }
   to {
     opacity: 1;
@@ -962,7 +962,7 @@ html {
 @keyframes fadeInLeft {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-60px);
   }
   to {
     opacity: 1;
@@ -973,7 +973,7 @@ html {
 @keyframes fadeInRight {
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(60px);
   }
   to {
     opacity: 1;
@@ -984,7 +984,7 @@ html {
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.8);
+    transform: scale(0.6);
   }
   to {
     opacity: 1;
@@ -992,44 +992,87 @@ html {
   }
 }
 
-/* 初始隐藏状态 */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 初始隐藏状态 - 增强版本 */
 .section:not(.hero),
 .card-grid .card,
 .timeline-item,
 .research-item,
 .skills-grid .skill-item {
   opacity: 0;
+  visibility: hidden;
+  transform: translateY(60px);
 }
 
-/* 动画触发后的状态 */
+/* 特殊元素的初始状态 */
+.timeline-item:nth-child(odd) {
+  transform: translateX(-60px);
+}
+
+.timeline-item:nth-child(even) {
+  transform: translateX(60px);
+}
+
+.research-item {
+  transform: scale(0.6);
+}
+
+.section:not(.hero) .section-title {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-40px);
+}
+
+/* 动画触发后的状态 - 增强版本 */
 .section:not(.hero).animate-in {
-  animation: fadeInUp 0.8s ease-out forwards;
+  visibility: visible;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.section:not(.hero).animate-in .section-title {
+  visibility: visible;
+  animation: fadeInDown 0.8s ease-out 0.2s forwards;
 }
 
 .card-grid .card.animate-in {
-  animation: fadeInUp 0.6s ease-out forwards;
+  visibility: visible;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
-.card-grid .card.animate-in:nth-child(1) { animation-delay: 0.1s; }
-.card-grid .card.animate-in:nth-child(2) { animation-delay: 0.2s; }
-.card-grid .card.animate-in:nth-child(3) { animation-delay: 0.3s; }
-.card-grid .card.animate-in:nth-child(4) { animation-delay: 0.4s; }
-.card-grid .card.animate-in:nth-child(5) { animation-delay: 0.5s; }
+.card-grid .card.animate-in:nth-child(1) { animation-delay: 0.2s; }
+.card-grid .card.animate-in:nth-child(2) { animation-delay: 0.35s; }
+.card-grid .card.animate-in:nth-child(3) { animation-delay: 0.5s; }
+.card-grid .card.animate-in:nth-child(4) { animation-delay: 0.65s; }
+.card-grid .card.animate-in:nth-child(5) { animation-delay: 0.8s; }
 
 .timeline-item.animate-in:nth-child(odd) {
-  animation: fadeInLeft 0.8s ease-out forwards;
+  visibility: visible;
+  animation: fadeInLeft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .timeline-item.animate-in:nth-child(even) {
-  animation: fadeInRight 0.8s ease-out forwards;
+  visibility: visible;
+  animation: fadeInRight 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
 .research-item.animate-in {
-  animation: fadeInScale 0.8s ease-out forwards;
+  visibility: visible;
+  animation: fadeInScale 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
 }
 
 .skills-grid .skill-item.animate-in {
-  animation: fadeInUp 0.6s ease-out forwards;
+  visibility: visible;
+  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .skills-grid .skill-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
