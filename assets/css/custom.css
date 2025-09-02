@@ -625,6 +625,139 @@ html {
   display: none;
 }
 
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hero Section Animations */
+.hero {
+  animation: fadeInScale 0.8s ease-out;
+}
+
+.hero-photo {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-title {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-description {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.hero-contact {
+  animation: fadeInUp 1s ease-out 1s both;
+}
+
+/* Section Animations */
+.section {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.section:nth-child(even) {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+/* Card animations with staggered effect */
+.card-grid .card:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.card-grid .card:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.card-grid .card:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.card-grid .card:nth-child(4) {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.card-grid .card:nth-child(5) {
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+/* Timeline item animations */
+.timeline-item:nth-child(odd) {
+  animation: slideInLeft 0.8s ease-out both;
+}
+
+.timeline-item:nth-child(even) {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+/* Research item animation */
+.research-item {
+  animation: fadeInScale 0.8s ease-out both;
+}
+
+/* Skill items animation */
+.skills-grid .skill-item:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.skills-grid .skill-item:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.2s both;
+}
+
+.skills-grid .skill-item:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.skills-grid .skill-item:nth-child(4) {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.skills-grid .skill-item:nth-child(5) {
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Hero Photo Styles */
 .hero-photo {
   text-align: center;
