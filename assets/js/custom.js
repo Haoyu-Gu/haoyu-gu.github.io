@@ -127,36 +127,63 @@
         }
     };
 
-    // Animation manager
+    // Animation management for scroll-triggered animations
     const animationManager = {
         init() {
-            this.setupScrollAnimations();
-        },
-        
-        setupScrollAnimations() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
+            this.observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        this.animateElement(entry.target);
                     }
                 });
-            }, observerOptions);
-            
-            // Observe elements that should animate in
-            const animatedElements = document.querySelectorAll('.card, .timeline-item, .skill-item, .contact-item, .publication-card');
-            animatedElements.forEach((el, index) => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(el);
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
             });
+
+            // Observe all animatable elements
+            this.observeElements();
+        },
+
+        observeElements() {
+            // Sections (excluding hero)
+            const sections = document.querySelectorAll('.section:not(.hero)');
+            sections.forEach(section => this.observer.observe(section));
+
+            // Cards
+            const cards = document.querySelectorAll('.card-grid .card');
+            cards.forEach(card => this.observer.observe(card));
+
+            // Timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => this.observer.observe(item));
+
+            // Research items
+            const researchItems = document.querySelectorAll('.research-item');
+            researchItems.forEach(item => this.observer.observe(item));
+
+            // Skill items
+            const skillItems = document.querySelectorAll('.skills-grid .skill-item');
+            skillItems.forEach(item => this.observer.observe(item));
+        },
+
+        animateElement(element) {
+            // Add animate-in class to trigger animations
+            element.classList.add('animate-in');
+            
+            // For containers with multiple children, animate children too
+            if (element.classList.contains('card-grid')) {
+                const cards = element.querySelectorAll('.card');
+                cards.forEach(card => card.classList.add('animate-in'));
+            }
+            
+            if (element.classList.contains('skills-grid')) {
+                const skillItems = element.querySelectorAll('.skill-item');
+                skillItems.forEach(item => item.classList.add('animate-in'));
+            }
+
+            // Stop observing this element
+            this.observer.unobserve(element);
         }
     };
 
