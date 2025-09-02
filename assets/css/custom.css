@@ -947,180 +947,103 @@ html {
   }
 }
 
-/* Page load animations for hero */
-.hero {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: heroFadeIn 1.2s ease-out 0.2s forwards;
-}
-
-.hero .hero-content > * {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroChildFadeIn 0.8s ease-out forwards;
-}
-
-.hero .hero-title {
-  animation-delay: 0.4s;
-}
-
-.hero .hero-subtitle {
-  animation-delay: 0.6s;
-}
-
-.hero .hero-description {
-  animation-delay: 0.8s;
-}
-
-.hero .hero-contact {
-  animation-delay: 1.0s;
-}
-
-.hero .profile-photo {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: photoFadeIn 1s ease-out 0.3s forwards;
-}
-
-@keyframes heroFadeIn {
+/* 动画关键帧定义 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-@keyframes heroChildFadeIn {
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-@keyframes photoFadeIn {
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-/* Scroll-triggered animations */
-/* All sections start hidden (except hero) */
-.section:not(.hero) {
+/* 初始隐藏状态 */
+.section:not(.hero),
+.card-grid .card,
+.timeline-item,
+.research-item,
+.skills-grid .skill-item {
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
+/* 动画触发后的状态 */
 .section:not(.hero).animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Section titles with slight delay */
-.section:not(.hero) .section-title {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 0.1s;
-}
-
-.section:not(.hero).animate-in .section-title {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Card animations with staggered effect */
-.card-grid .card {
-  opacity: 0;
-  transform: translateY(30px) scale(0.95);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 .card-grid .card.animate-in {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Individual card delays - applied via JavaScript */
-.card-grid .card.animate-in:nth-child(1) {
-  transition-delay: 0.3s;
+.card-grid .card.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.card-grid .card.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.card-grid .card.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.card-grid .card.animate-in:nth-child(4) { animation-delay: 0.4s; }
+.card-grid .card.animate-in:nth-child(5) { animation-delay: 0.5s; }
+
+.timeline-item.animate-in:nth-child(odd) {
+  animation: fadeInLeft 0.8s ease-out forwards;
 }
 
-.card-grid .card.animate-in:nth-child(2) {
-  transition-delay: 0.4s;
-}
-
-.card-grid .card.animate-in:nth-child(3) {
-  transition-delay: 0.5s;
-}
-
-.card-grid .card.animate-in:nth-child(4) {
-  transition-delay: 0.6s;
-}
-
-.card-grid .card.animate-in:nth-child(5) {
-  transition-delay: 0.7s;
-}
-
-/* Timeline item animations */
-.timeline-item {
-  opacity: 0;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.timeline-item:nth-child(odd) {
-  transform: translateX(-30px);
-}
-
-.timeline-item:nth-child(even) {
-  transform: translateY(30px);
-}
-
-.timeline-item.animate-in {
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
-
-/* Research item animation */
-.research-item {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.timeline-item.animate-in:nth-child(even) {
+  animation: fadeInRight 0.8s ease-out forwards;
 }
 
 .research-item.animate-in {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* Skill items animation */
-.skills-grid .skill-item {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.skills-grid .skill-item.animate-in:nth-child(1) {
-  transition-delay: 0.1s;
-}
-
-.skills-grid .skill-item.animate-in:nth-child(2) {
-  transition-delay: 0.2s;
-}
-
-.skills-grid .skill-item.animate-in:nth-child(3) {
-  transition-delay: 0.3s;
-}
-
-.skills-grid .skill-item.animate-in:nth-child(4) {
-  transition-delay: 0.4s;
-}
-
-.skills-grid .skill-item.animate-in:nth-child(5) {
-  transition-delay: 0.5s;
+  animation: fadeInScale 0.8s ease-out forwards;
 }
 
 .skills-grid .skill-item.animate-in {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.skills-grid .skill-item.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.skills-grid .skill-item.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.skills-grid .skill-item.animate-in:nth-child(4) { animation-delay: 0.4s; }
+.skills-grid .skill-item.animate-in:nth-child(5) { animation-delay: 0.5s; }
+.skills-grid .skill-item.animate-in:nth-child(6) { animation-delay: 0.6s; }
+
+/* 减速动画设置 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -127,14 +127,31 @@
         }
     };
 
-    // Animation management for scroll-triggered animations
+    // 简单的动画管理器
     const animationManager = {
         init() {
-            this.observer = new IntersectionObserver((entries) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        console.log('Animating element:', entry.target.className);
-                        this.animateElement(entry.target);
+                        entry.target.classList.add('animate-in');
+                        
+                        // 对于包含子元素的容器，也给子元素添加动画
+                        if (entry.target.classList.contains('section')) {
+                            // 延迟添加子元素动画
+                            setTimeout(() => {
+                                const cards = entry.target.querySelectorAll('.card');
+                                const timelineItems = entry.target.querySelectorAll('.timeline-item');
+                                const researchItems = entry.target.querySelectorAll('.research-item');
+                                const skillItems = entry.target.querySelectorAll('.skill-item');
+                                
+                                cards.forEach(card => card.classList.add('animate-in'));
+                                timelineItems.forEach(item => item.classList.add('animate-in'));
+                                researchItems.forEach(item => item.classList.add('animate-in'));
+                                skillItems.forEach(item => item.classList.add('animate-in'));
+                            }, 100);
+                        }
+                        
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
@@ -142,109 +159,9 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            // Wait for DOM to be fully ready, then observe elements
-            setTimeout(() => {
-                this.observeElements();
-            }, 100);
-        },
-
-        observeElements() {
-            // Primary strategy: observe sections, animate everything inside
-            const sections = document.querySelectorAll('.section:not(.hero)');
-            console.log('Found sections for animation:', sections.length);
-            sections.forEach(section => this.observer.observe(section));
-
-            // Fallback: observe standalone elements that might not be in sections
-            const standaloneCardGrids = document.querySelectorAll('.card-grid:not(.section .card-grid)');
-            const standaloneSkillsGrids = document.querySelectorAll('.skills-grid:not(.section .skills-grid)');
-            const standaloneTimelineItems = document.querySelectorAll('.timeline-item:not(.section .timeline-item)');
-            const standaloneResearchItems = document.querySelectorAll('.research-item:not(.section .research-item)');
-
-            console.log('Standalone elements:', {
-                cardGrids: standaloneCardGrids.length,
-                skillsGrids: standaloneSkillsGrids.length,
-                timelineItems: standaloneTimelineItems.length,
-                researchItems: standaloneResearchItems.length
-            });
-
-            standaloneCardGrids.forEach(grid => this.observer.observe(grid));
-            standaloneSkillsGrids.forEach(grid => this.observer.observe(grid));
-            standaloneTimelineItems.forEach(item => this.observer.observe(item));
-            standaloneResearchItems.forEach(item => this.observer.observe(item));
-        },
-
-        animateElement(element) {
-            // Add animate-in class to trigger animations
-            element.classList.add('animate-in');
-            
-            // For sections, animate content with appropriate delays
-            if (element.classList.contains('section')) {
-                // Animate cards inside card-grids
-                const cardGrids = element.querySelectorAll('.card-grid');
-                cardGrids.forEach(grid => {
-                    const cards = grid.querySelectorAll('.card');
-                    cards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add('animate-in');
-                        }, 200 + (index * 100)); // Start after section animation
-                    });
-                });
-
-                // Animate skills grids
-                const skillsGrids = element.querySelectorAll('.skills-grid');
-                skillsGrids.forEach(grid => {
-                    const skillItems = grid.querySelectorAll('.skill-item');
-                    skillItems.forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('animate-in');
-                        }, 200 + (index * 100));
-                    });
-                });
-
-                // Animate timeline items
-                const timelineItems = element.querySelectorAll('.timeline-item');
-                timelineItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('animate-in');
-                    }, 200 + (index * 150));
-                });
-
-                // Animate research items
-                const researchItems = element.querySelectorAll('.research-item');
-                researchItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('animate-in');
-                    }, 200 + (index * 150));
-                });
-            }
-            
-            // For standalone card grids (if any)
-            if (element.classList.contains('card-grid')) {
-                const cards = element.querySelectorAll('.card');
-                cards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('animate-in');
-                    }, index * 100);
-                });
-            }
-            
-            // For standalone skills grids (if any)
-            if (element.classList.contains('skills-grid')) {
-                const skillItems = element.querySelectorAll('.skill-item');
-                skillItems.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add('animate-in');
-                    }, index * 100);
-                });
-            }
-
-            // For standalone timeline and research items
-            if (element.classList.contains('timeline-item') || element.classList.contains('research-item')) {
-                // These will be animated individually, nothing special needed
-            }
-
-            // Stop observing this element
-            this.observer.unobserve(element);
+            // 观察所有需要动画的元素
+            const animatableElements = document.querySelectorAll('.section:not(.hero), .card, .timeline-item, .research-item, .skill-item');
+            animatableElements.forEach(el => observer.observe(el));
         }
     };
 
