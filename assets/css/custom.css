@@ -44,12 +44,19 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Theme toggle button */
-.theme-toggle {
+/* Toggle buttons container */
+.toggle-buttons {
   position: fixed;
   top: 20px;
-  right: 80px;
+  right: 20px;
   z-index: 1001;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Theme toggle button */
+.theme-toggle {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
   border-radius: 50%;
@@ -61,6 +68,7 @@ body {
   cursor: pointer;
   box-shadow: 0 2px 8px var(--shadow-color);
   font-size: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .theme-toggle:hover {
@@ -70,18 +78,20 @@ body {
 
 /* Language toggle button */
 .lang-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 8px 12px;
+  border-radius: 22px;
+  height: 44px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
   box-shadow: 0 2px 8px var(--shadow-color);
+  min-width: 60px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .lang-toggle:hover {
@@ -537,19 +547,23 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .theme-toggle {
+  .toggle-buttons {
     top: 15px;
-    right: 70px;
+    right: 15px;
+    gap: 8px;
+  }
+  
+  .theme-toggle {
     width: 36px;
     height: 36px;
     font-size: 14px;
   }
   
   .lang-toggle {
-    top: 15px;
-    right: 15px;
-    padding: 6px 10px;
+    height: 36px;
+    padding: 0 12px;
     font-size: 12px;
+    min-width: 50px;
   }
   
   .nav-container {
@@ -608,4 +622,193 @@ html {
 /* Hide original masthead when using custom nav */
 .custom-layout .masthead {
   display: none;
+}
+
+/* Hero Photo Styles */
+.hero-photo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 48px var(--shadow-color);
+}
+
+/* Hero Contact Info */
+.hero-contact {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.hero-contact p {
+  margin: 0.5rem 0;
+}
+
+.hero-contact a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.hero-contact a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* Research Experience Styles */
+.research-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.research-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.research-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.research-title {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  flex: 1;
+  min-width: 250px;
+}
+
+.research-period {
+  background: linear-gradient(135deg, var(--link-color), #28a745);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.research-content {
+  color: var(--text-primary);
+}
+
+.research-supervisor {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.research-details h4 {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.8rem 0;
+  font-weight: 600;
+}
+
+.research-details ul {
+  margin: 0.8rem 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+.research-details li {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.research-details p {
+  margin: 0.8rem 0 1.5rem 0;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.research-status {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.status-badge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-badge.under-review {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: white;
+}
+
+.status-badge.published {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.status-badge.in-progress {
+  background: linear-gradient(135deg, #007bff, #6610f2);
+  color: white;
+}
+
+/* Mobile Responsive for Research Section */
+@media (max-width: 768px) {
+  .profile-photo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .hero-contact {
+    font-size: 0.9rem;
+  }
+  
+  .research-item {
+    padding: 1.5rem;
+  }
+  
+  .research-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .research-title {
+    font-size: 1.1rem;
+    min-width: unset;
+  }
+  
+  .research-period {
+    align-self: flex-start;
+  }
+  
+  .research-status {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
