@@ -149,54 +149,98 @@
         },
 
         observeElements() {
-            // Sections (excluding hero) - observe the sections themselves
+            // Primary strategy: observe sections, animate everything inside
             const sections = document.querySelectorAll('.section:not(.hero)');
-            console.log('Found sections:', sections.length);
+            console.log('Found sections for animation:', sections.length);
             sections.forEach(section => this.observer.observe(section));
 
-            // Card grids - observe the containers
-            const cardGrids = document.querySelectorAll('.card-grid');
-            console.log('Found card grids:', cardGrids.length);
-            cardGrids.forEach(grid => this.observer.observe(grid));
+            // Fallback: observe standalone elements that might not be in sections
+            const standaloneCardGrids = document.querySelectorAll('.card-grid:not(.section .card-grid)');
+            const standaloneSkillsGrids = document.querySelectorAll('.skills-grid:not(.section .skills-grid)');
+            const standaloneTimelineItems = document.querySelectorAll('.timeline-item:not(.section .timeline-item)');
+            const standaloneResearchItems = document.querySelectorAll('.research-item:not(.section .research-item)');
 
-            // Skills grids - observe the containers  
-            const skillsGrids = document.querySelectorAll('.skills-grid');
-            console.log('Found skills grids:', skillsGrids.length);
-            skillsGrids.forEach(grid => this.observer.observe(grid));
+            console.log('Standalone elements:', {
+                cardGrids: standaloneCardGrids.length,
+                skillsGrids: standaloneSkillsGrids.length,
+                timelineItems: standaloneTimelineItems.length,
+                researchItems: standaloneResearchItems.length
+            });
 
-            // Timeline items - observe individual items
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            console.log('Found timeline items:', timelineItems.length);
-            timelineItems.forEach(item => this.observer.observe(item));
-
-            // Research items - observe individual items
-            const researchItems = document.querySelectorAll('.research-item');
-            console.log('Found research items:', researchItems.length);
-            researchItems.forEach(item => this.observer.observe(item));
+            standaloneCardGrids.forEach(grid => this.observer.observe(grid));
+            standaloneSkillsGrids.forEach(grid => this.observer.observe(grid));
+            standaloneTimelineItems.forEach(item => this.observer.observe(item));
+            standaloneResearchItems.forEach(item => this.observer.observe(item));
         },
 
         animateElement(element) {
             // Add animate-in class to trigger animations
             element.classList.add('animate-in');
             
-            // For card grids, animate the cards inside
+            // For sections, animate content with appropriate delays
+            if (element.classList.contains('section')) {
+                // Animate cards inside card-grids
+                const cardGrids = element.querySelectorAll('.card-grid');
+                cardGrids.forEach(grid => {
+                    const cards = grid.querySelectorAll('.card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.classList.add('animate-in');
+                        }, 200 + (index * 100)); // Start after section animation
+                    });
+                });
+
+                // Animate skills grids
+                const skillsGrids = element.querySelectorAll('.skills-grid');
+                skillsGrids.forEach(grid => {
+                    const skillItems = grid.querySelectorAll('.skill-item');
+                    skillItems.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, 200 + (index * 100));
+                    });
+                });
+
+                // Animate timeline items
+                const timelineItems = element.querySelectorAll('.timeline-item');
+                timelineItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate-in');
+                    }, 200 + (index * 150));
+                });
+
+                // Animate research items
+                const researchItems = element.querySelectorAll('.research-item');
+                researchItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate-in');
+                    }, 200 + (index * 150));
+                });
+            }
+            
+            // For standalone card grids (if any)
             if (element.classList.contains('card-grid')) {
                 const cards = element.querySelectorAll('.card');
                 cards.forEach((card, index) => {
                     setTimeout(() => {
                         card.classList.add('animate-in');
-                    }, index * 100); // Stagger the animations
+                    }, index * 100);
                 });
             }
             
-            // For skills grids, animate the skill items inside
+            // For standalone skills grids (if any)
             if (element.classList.contains('skills-grid')) {
                 const skillItems = element.querySelectorAll('.skill-item');
                 skillItems.forEach((item, index) => {
                     setTimeout(() => {
                         item.classList.add('animate-in');
-                    }, index * 100); // Stagger the animations
+                    }, index * 100);
                 });
+            }
+
+            // For standalone timeline and research items
+            if (element.classList.contains('timeline-item') || element.classList.contains('research-item')) {
+                // These will be animated individually, nothing special needed
             }
 
             // Stop observing this element
