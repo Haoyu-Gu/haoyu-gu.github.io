@@ -948,25 +948,16 @@ html {
 }
 
 /* Scroll-triggered animations */
-/* Initial hidden state for scroll animations */
-.section:not(.hero) {
+/* Section title animations */
+.section:not(.hero) .section-title {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.section:not(.hero).animate-in {
+.section:not(.hero).animate-in .section-title {
   opacity: 1;
   transform: translateY(0);
-}
-
-.section:nth-child(even):not(.hero) {
-  transform: translateX(-30px);
-}
-
-.section:nth-child(even):not(.hero).animate-in {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 /* Card animations with staggered effect */

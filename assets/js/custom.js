@@ -133,6 +133,7 @@
             this.observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        console.log('Animating element:', entry.target.className);
                         this.animateElement(entry.target);
                     }
                 });
@@ -141,45 +142,61 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            // Observe all animatable elements
-            this.observeElements();
+            // Wait for DOM to be fully ready, then observe elements
+            setTimeout(() => {
+                this.observeElements();
+            }, 100);
         },
 
         observeElements() {
-            // Sections (excluding hero)
+            // Sections (excluding hero) - observe the sections themselves
             const sections = document.querySelectorAll('.section:not(.hero)');
+            console.log('Found sections:', sections.length);
             sections.forEach(section => this.observer.observe(section));
 
-            // Cards
-            const cards = document.querySelectorAll('.card-grid .card');
-            cards.forEach(card => this.observer.observe(card));
+            // Card grids - observe the containers
+            const cardGrids = document.querySelectorAll('.card-grid');
+            console.log('Found card grids:', cardGrids.length);
+            cardGrids.forEach(grid => this.observer.observe(grid));
 
-            // Timeline items
+            // Skills grids - observe the containers  
+            const skillsGrids = document.querySelectorAll('.skills-grid');
+            console.log('Found skills grids:', skillsGrids.length);
+            skillsGrids.forEach(grid => this.observer.observe(grid));
+
+            // Timeline items - observe individual items
             const timelineItems = document.querySelectorAll('.timeline-item');
+            console.log('Found timeline items:', timelineItems.length);
             timelineItems.forEach(item => this.observer.observe(item));
 
-            // Research items
+            // Research items - observe individual items
             const researchItems = document.querySelectorAll('.research-item');
+            console.log('Found research items:', researchItems.length);
             researchItems.forEach(item => this.observer.observe(item));
-
-            // Skill items
-            const skillItems = document.querySelectorAll('.skills-grid .skill-item');
-            skillItems.forEach(item => this.observer.observe(item));
         },
 
         animateElement(element) {
             // Add animate-in class to trigger animations
             element.classList.add('animate-in');
             
-            // For containers with multiple children, animate children too
+            // For card grids, animate the cards inside
             if (element.classList.contains('card-grid')) {
                 const cards = element.querySelectorAll('.card');
-                cards.forEach(card => card.classList.add('animate-in'));
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('animate-in');
+                    }, index * 100); // Stagger the animations
+                });
             }
             
+            // For skills grids, animate the skill items inside
             if (element.classList.contains('skills-grid')) {
                 const skillItems = element.querySelectorAll('.skill-item');
-                skillItems.forEach(item => item.classList.add('animate-in'));
+                skillItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('animate-in');
+                    }, index * 100); // Stagger the animations
+                });
             }
 
             // Stop observing this element
