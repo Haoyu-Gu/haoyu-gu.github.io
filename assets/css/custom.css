@@ -47,7 +47,7 @@ body {
 /* Toggle buttons container */
 .toggle-buttons {
   position: fixed;
-  top: 20px;
+  top: 18px;
   right: 20px;
   z-index: 1001;
   display: flex;
@@ -164,10 +164,11 @@ body {
 .nav-secondary a {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 14px;
-  padding: 6px 12px;
+  font-weight: 500;
+  padding: 8px 16px;
   border-radius: 15px;
   transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-secondary a:hover {
