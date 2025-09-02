@@ -143,11 +143,15 @@
                                 const timelineItems = entry.target.querySelectorAll('.timeline-item');
                                 const researchItems = entry.target.querySelectorAll('.research-item');
                                 const skillItems = entry.target.querySelectorAll('.skill-item');
+                                const sectionSubtitles = entry.target.querySelectorAll('.section-subtitle');
+                                const contactItems = entry.target.querySelectorAll('.contact-item');
                                 
                                 cards.forEach(card => card.classList.add('animate-in'));
                                 timelineItems.forEach(item => item.classList.add('animate-in'));
                                 researchItems.forEach(item => item.classList.add('animate-in'));
                                 skillItems.forEach(item => item.classList.add('animate-in'));
+                                sectionSubtitles.forEach(subtitle => subtitle.classList.add('animate-in'));
+                                contactItems.forEach(item => item.classList.add('animate-in'));
                             }, 100);
                         }
                         
@@ -160,7 +164,7 @@
             });
 
             // 观察所有需要动画的元素
-            const animatableElements = document.querySelectorAll('.section:not(.hero), .card, .timeline-item, .research-item, .skill-item');
+            const animatableElements = document.querySelectorAll('.section:not(.hero), .card, .timeline-item, .research-item, .skill-item, .section-subtitle, .contact-item');
             animatableElements.forEach(el => observer.observe(el));
         }
     };
