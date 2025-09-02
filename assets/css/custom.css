@@ -946,3 +946,120 @@ html {
     gap: 0.5rem;
   }
 }
+
+/* Scroll-triggered animations */
+/* Initial hidden state for scroll animations */
+.section:not(.hero) {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section:not(.hero).animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section:nth-child(even):not(.hero) {
+  transform: translateX(-30px);
+}
+
+.section:nth-child(even):not(.hero).animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Card animations with staggered effect */
+.card-grid .card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card-grid .card.animate-in:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.card-grid .card.animate-in:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.card-grid .card.animate-in:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.card-grid .card.animate-in:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.card-grid .card.animate-in:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.card-grid .card.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Timeline item animations */
+.timeline-item {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.timeline-item:nth-child(odd) {
+  transform: translateX(-30px);
+}
+
+.timeline-item:nth-child(even) {
+  transform: translateY(30px);
+}
+
+.timeline-item.animate-in {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* Research item animation */
+.research-item {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.research-item.animate-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Skill items animation */
+.skills-grid .skill-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.skills-grid .skill-item.animate-in:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.skills-grid .skill-item.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
