@@ -17,4 +17,38 @@
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- Custom styles for single page layout -->
+{% if page.layout == 'single-page' %}
+<link rel="stylesheet" href="{{ base_path }}/assets/css/custom.css">
+<style>
+/* Inline critical CSS for immediate loading */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #2c3e50;
+  --text-secondary: #6c757d;
+  --link-color: #007bff;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #e9ecef;
+  --text-secondary: #adb5bd;
+  --link-color: #66b3ff;
+  --nav-bg: rgba(26, 26, 26, 0.95);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+</style>
+{% endif %}
+
 <!-- end custom head snippets -->

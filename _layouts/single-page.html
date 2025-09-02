@@ -1,0 +1,98 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+    <!-- Custom CSS will be loaded via head/custom.html -->
+  </head>
+
+  <body class="custom-layout">
+    {% include browser-upgrade.html %}
+    
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" title="Toggle dark/light theme">🌙</button>
+    
+    <!-- Language Toggle Button -->
+    <button class="lang-toggle" title="Toggle language">中文</button>
+    
+    <!-- Custom Navigation -->
+    <nav class="custom-nav">
+      <div class="nav-container">
+        <a href="#home" class="nav-brand" data-lang='{"en": "{{ site.name }}", "zh": "{{ site.name }}"}'>{{ site.name }}</a>
+        
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#about" data-lang='{"en": "About Me", "zh": "关于我"}'>About Me</a>
+          </li>
+          <li class="nav-item">
+            <a href="#education" data-lang='{"en": "Education", "zh": "教育背景"}'>Education</a>
+          </li>
+          <li class="nav-item">
+            <a href="#honors" data-lang='{"en": "Honors & Awards", "zh": "荣誉奖项"}'>Honors & Awards</a>
+          </li>
+          <li class="nav-item">
+            <a href="#research" data-lang='{"en": "Research", "zh": "研究方向"}'>Research</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" data-lang='{"en": "Skills", "zh": "技能"}'>Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#publications" data-lang='{"en": "Publications", "zh": "发表论文"}'>Publications</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" data-lang='{"en": "Contact", "zh": "联系我"}'>Contact</a>
+          </li>
+        </ul>
+        
+        <div class="nav-secondary">
+          <a href="{{ base_path }}/year-archive/" data-lang='{"en": "Blog", "zh": "博客"}'>Blog</a>
+          <a href="{{ base_path }}/cv/" data-lang='{"en": "CV", "zh": "简历"}'>CV</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      {{ content }}
+    </main>
+
+    <!-- Friends Section -->
+    <section class="friends-section">
+      <div class="main-content">
+        <h2 class="section-title" data-lang='{"en": "My Friends 😊", "zh": "我的朋友们 😊"}'>My Friends 😊</h2>
+        <div class="friends-grid">
+          <div class="friend-card">
+            <h3 class="friend-name">Mike Meng</h3>
+            <a href="https://mikemengtr.github.io" class="friend-link" target="_blank">mikemengtr.github.io</a>
+          </div>
+          <div class="friend-card">
+            <h3 class="friend-name">Walker Sun</h3>
+            <a href="https://zhenyusun-walker.github.io" class="friend-link" target="_blank">zhenyusun-walker.github.io</a>
+          </div>
+          <div class="friend-card">
+            <h3 class="friend-name">Kane Wang</h3>
+            <a href="https://sitongwang-nj.github.io" class="friend-link" target="_blank">sitongwang-nj.github.io</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ base_path }}/assets/js/custom.js"></script>
+  </body>
+</html>
