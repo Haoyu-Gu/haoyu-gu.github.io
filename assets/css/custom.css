@@ -930,29 +930,37 @@ html {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-/* 错开延迟效果 - 适用于所有网格中的元素 */
-.card-grid .card.animate-in:nth-child(1), 
-.skills-grid .skill-item.animate-in:nth-child(1),
-.contact-grid .contact-item.animate-in:nth-child(1) { animation-delay: 0.2s; }
+/* 统一延迟效果 - 按出现顺序递增延迟 */
+/* 卡片网格元素 */
+.card.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.card.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.card.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.card.animate-in:nth-child(4) { animation-delay: 0.4s; }
+.card.animate-in:nth-child(5) { animation-delay: 0.5s; }
 
-.card-grid .card.animate-in:nth-child(2), 
-.skills-grid .skill-item.animate-in:nth-child(2),
-.contact-grid .contact-item.animate-in:nth-child(2) { animation-delay: 0.4s; }
+/* 技能网格元素 */
+.skill-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.skill-item.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.skill-item.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.skill-item.animate-in:nth-child(4) { animation-delay: 0.4s; }
+.skill-item.animate-in:nth-child(5) { animation-delay: 0.5s; }
+.skill-item.animate-in:nth-child(6) { animation-delay: 0.6s; }
 
-.card-grid .card.animate-in:nth-child(3), 
-.skills-grid .skill-item.animate-in:nth-child(3),
-.contact-grid .contact-item.animate-in:nth-child(3) { animation-delay: 0.6s; }
+/* 联系方式网格元素 */
+.contact-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.contact-item.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.contact-item.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.contact-item.animate-in:nth-child(4) { animation-delay: 0.4s; }
 
-.card-grid .card.animate-in:nth-child(4), 
-.skills-grid .skill-item.animate-in:nth-child(4),
-.contact-grid .contact-item.animate-in:nth-child(4) { animation-delay: 0.8s; }
+/* 时间线元素 */
+.timeline-item.animate-in:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item.animate-in:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item.animate-in:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item.animate-in:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item.animate-in:nth-child(5) { animation-delay: 0.5s; }
 
-.card-grid .card.animate-in:nth-child(5), 
-.skills-grid .skill-item.animate-in:nth-child(5) { animation-delay: 1.0s; }
-
-.skills-grid .skill-item.animate-in:nth-child(6) { animation-delay: 1.2s; }
-
-.section-subtitle.animate-in { animation-delay: 0.3s; }
+/* 小标题 */
+.section-subtitle.animate-in { animation-delay: 0.15s; }
 
 /* 减速动画设置 */
 @media (prefers-reduced-motion: reduce) {

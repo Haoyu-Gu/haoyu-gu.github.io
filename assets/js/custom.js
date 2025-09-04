@@ -127,32 +127,13 @@
         }
     };
 
-    // 简单的动画管理器
+    // 动画管理器 - 确保全覆盖
     const animationManager = {
         init() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('animate-in');
-                        
-                        // 对于包含子元素的容器，也给子元素添加动画
-                        if (entry.target.classList.contains('section')) {
-                            // 延迟添加子元素动画
-                            setTimeout(() => {
-                                const cards = entry.target.querySelectorAll('.card');
-                                const timelineItems = entry.target.querySelectorAll('.timeline-item');
-                                const skillItems = entry.target.querySelectorAll('.skill-item');
-                                const sectionSubtitles = entry.target.querySelectorAll('.section-subtitle');
-                                const contactItems = entry.target.querySelectorAll('.contact-item');
-                                
-                                cards.forEach(card => card.classList.add('animate-in'));
-                                timelineItems.forEach(item => item.classList.add('animate-in'));
-                                skillItems.forEach(item => item.classList.add('animate-in'));
-                                sectionSubtitles.forEach(subtitle => subtitle.classList.add('animate-in'));
-                                contactItems.forEach(item => item.classList.add('animate-in'));
-                            }, 100);
-                        }
-                        
                         observer.unobserve(entry.target);
                     }
                 });
@@ -161,8 +142,16 @@
                 rootMargin: '0px 0px -50px 0px'
             });
 
-            // 观察所有需要动画的元素
-            const animatableElements = document.querySelectorAll('.section:not(.hero), .card, .timeline-item, .skill-item, .section-subtitle, .contact-item');
+            // 观察所有可动画的元素 - 直接观察每个元素，不依赖容器
+            const animatableElements = document.querySelectorAll([
+                '.section:not(.hero)',           // 所有非Hero的section
+                '.card',                         // 所有卡片
+                '.timeline-item',                // 所有时间线项目
+                '.skill-item',                   // 所有技能项目
+                '.section-subtitle',             // 所有小标题
+                '.contact-item'                  // 所有联系项目
+            ].join(', '));
+            
             animatableElements.forEach(el => observer.observe(el));
         }
     };
