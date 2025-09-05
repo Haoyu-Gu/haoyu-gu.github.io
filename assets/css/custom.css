@@ -429,7 +429,7 @@ body {
   color: var(--text-secondary);
   font-style: italic;
   font-size: 0.85rem;
-  margin: 0.5rem 0;
+  margin-left: 0.5rem;
 }
 
 /* Gaokao score styles */
