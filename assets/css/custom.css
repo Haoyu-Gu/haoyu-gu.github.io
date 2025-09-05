@@ -417,6 +417,28 @@ body {
   padding: 1.5rem;
 }
 
+/* Education description styles */
+.university-description {
+  color: var(--text-accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.school-description {
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+/* Gaokao score styles */
+.gaokao-score {
+  color: var(--link-color);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
 /* Skills grid */
 .skills-grid {
   display: grid;
