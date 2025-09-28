@@ -51,78 +51,16 @@ body {
   color: var(--text-primary);
 }
 
-/* Friends section scrollable container */
-.friends-scroll-container {
-  position: relative;
-  overflow: hidden;
-}
-
+/* Friends grid layout */
 .friends-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  transition: transform 0.3s ease;
-  /* Enable horizontal scrolling when needed */
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
-  padding-bottom: 1rem;
-}
-
-.friends-grid::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
-}
-
-/* Scroll navigation buttons */
-.friends-nav {
-  display: none; /* Hidden by default, shown via JS when needed */
-  position: absolute;
-  background: var(--bg-primary);
-  border: 2px solid var(--text-secondary);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0.7;
-  transition: opacity 0.3s ease;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.friends-nav:hover {
-  opacity: 1;
-}
-
-.friends-nav-left {
-  left: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.friends-nav-right {
-  right: -20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.friends-auto-toggle {
-  top: -60px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-}
-
-.friends-nav i {
-  color: var(--text-primary);
-  font-size: 1.2rem;
 }
 
 /* Friend card base styles */
 .friend-card {
-  flex: 0 0 auto;
-  min-width: 250px; /* Minimum card width for scrolling */
+  /* Remove flex-specific styles */
 }
 
 /* Friend card content styles */
