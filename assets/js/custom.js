@@ -184,11 +184,18 @@
             this.container = document.getElementById('friendsGrid');
             this.leftBtn = document.getElementById('friendsNavLeft');
             this.rightBtn = document.getElementById('friendsNavRight');
+            this.autoToggleBtn = document.getElementById('friendsAutoToggle');
+            this.autoScrollIcon = document.getElementById('autoScrollIcon');
+            this.autoScrollInterval = null;
+            this.isAutoScrolling = false;
+            this.autoScrollDirection = 1; // 1 for right, -1 for left
+            this.autoScrollDelay = 3000; // 3 seconds
 
             if (!this.container) return;
 
             this.checkScrollability();
             this.setupEventListeners();
+            this.startAutoScroll();
 
             // Check scrollability on window resize
             window.addEventListener('resize', utils.debounce(() => this.checkScrollability(), 250));
@@ -197,28 +204,42 @@
         checkScrollability() {
             if (!this.container) return;
 
-            const isScrollable = this.container.scrollWidth > this.container.clientWidth;
-
-            if (isScrollable) {
-                this.leftBtn.style.display = 'flex';
-                this.rightBtn.style.display = 'flex';
-                this.updateNavigationState();
-            } else {
-                this.leftBtn.style.display = 'none';
-                this.rightBtn.style.display = 'none';
-            }
+            // Always show scroll buttons for friends section
+            this.leftBtn.style.display = 'flex';
+            this.rightBtn.style.display = 'flex';
+            this.autoToggleBtn.style.display = 'flex';
+            this.updateNavigationState();
         },
 
         setupEventListeners() {
             if (this.leftBtn) {
-                this.leftBtn.addEventListener('click', () => this.scrollLeft());
+                this.leftBtn.addEventListener('click', () => {
+                    this.pauseAutoScroll();
+                    this.scrollLeft();
+                });
             }
             if (this.rightBtn) {
-                this.rightBtn.addEventListener('click', () => this.scrollRight());
+                this.rightBtn.addEventListener('click', () => {
+                    this.pauseAutoScroll();
+                    this.scrollRight();
+                });
             }
 
             if (this.container) {
                 this.container.addEventListener('scroll', utils.debounce(() => this.updateNavigationState(), 100));
+
+                // Pause auto-scroll on hover
+                this.container.addEventListener('mouseenter', () => this.pauseAutoScroll());
+                this.container.addEventListener('mouseleave', () => this.resumeAutoScroll());
+
+                // Pause auto-scroll on touch
+                this.container.addEventListener('touchstart', () => this.pauseAutoScroll());
+                this.container.addEventListener('touchend', () => this.resumeAutoScroll());
+            }
+
+            // Auto-scroll toggle button
+            if (this.autoToggleBtn) {
+                this.autoToggleBtn.addEventListener('click', () => this.toggleAutoScroll());
             }
         },
 
@@ -251,6 +272,68 @@
             const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
             this.rightBtn.style.opacity = isAtEnd ? '0.3' : '0.7';
             this.rightBtn.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+        },
+
+        startAutoScroll() {
+            if (this.autoScrollInterval) return;
+
+            this.isAutoScrolling = true;
+            this.updateAutoScrollIcon(true);
+            this.autoScrollInterval = setInterval(() => {
+                if (!this.container) return;
+
+                const { scrollLeft, scrollWidth, clientWidth } = this.container;
+                const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+                const isAtStart = scrollLeft <= 0;
+
+                // Change direction when reaching boundaries
+                if (isAtEnd && this.autoScrollDirection === 1) {
+                    this.autoScrollDirection = -1;
+                } else if (isAtStart && this.autoScrollDirection === -1) {
+                    this.autoScrollDirection = 1;
+                }
+
+                // Perform auto scroll
+                const scrollAmount = this.container.clientWidth * 0.4; // Smaller scroll amount for smoother auto-scroll
+                this.container.scrollBy({
+                    left: scrollAmount * this.autoScrollDirection,
+                    behavior: 'smooth'
+                });
+            }, this.autoScrollDelay);
+        },
+
+        pauseAutoScroll() {
+            if (this.autoScrollInterval) {
+                clearInterval(this.autoScrollInterval);
+                this.autoScrollInterval = null;
+                this.isAutoScrolling = false;
+            }
+        },
+
+        resumeAutoScroll() {
+            // Resume after a delay to allow user interaction to complete
+            setTimeout(() => {
+                if (!this.isAutoScrolling) {
+                    this.startAutoScroll();
+                }
+            }, 1000);
+        },
+
+        toggleAutoScroll() {
+            if (this.isAutoScrolling) {
+                this.pauseAutoScroll();
+                this.updateAutoScrollIcon(false);
+            } else {
+                this.startAutoScroll();
+                this.updateAutoScrollIcon(true);
+            }
+        },
+
+        updateAutoScrollIcon(isScrolling) {
+            if (this.autoScrollIcon) {
+                this.autoScrollIcon.className = isScrolling ? 'fas fa-pause' : 'fas fa-play';
+                this.autoToggleBtn.title = isScrolling ? 'Pause auto-scroll' : 'Resume auto-scroll';
+            }
         }
     };
 
