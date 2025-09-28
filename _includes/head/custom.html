@@ -77,8 +77,6 @@ body {
 .friends-nav {
   display: none; /* Hidden by default, shown via JS when needed */
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
   background: var(--bg-primary);
   border: 2px solid var(--text-secondary);
   border-radius: 50%;
@@ -99,10 +97,14 @@ body {
 
 .friends-nav-left {
   left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .friends-nav-right {
   right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .friends-auto-toggle {
@@ -133,7 +135,7 @@ body {
 
 .friend-research {
   font-size: 0.85rem;
-  color: var(--link-color);
+  color: var(--text-secondary);
   margin: 0.25rem 0;
   font-style: italic;
 }
