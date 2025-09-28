@@ -178,12 +178,89 @@
         }
     };
 
+    // Friends scroll management
+    const friendsScrollManager = {
+        init() {
+            this.container = document.getElementById('friendsGrid');
+            this.leftBtn = document.getElementById('friendsNavLeft');
+            this.rightBtn = document.getElementById('friendsNavRight');
+
+            if (!this.container) return;
+
+            this.checkScrollability();
+            this.setupEventListeners();
+
+            // Check scrollability on window resize
+            window.addEventListener('resize', utils.debounce(() => this.checkScrollability(), 250));
+        },
+
+        checkScrollability() {
+            if (!this.container) return;
+
+            const isScrollable = this.container.scrollWidth > this.container.clientWidth;
+
+            if (isScrollable) {
+                this.leftBtn.style.display = 'flex';
+                this.rightBtn.style.display = 'flex';
+                this.updateNavigationState();
+            } else {
+                this.leftBtn.style.display = 'none';
+                this.rightBtn.style.display = 'none';
+            }
+        },
+
+        setupEventListeners() {
+            if (this.leftBtn) {
+                this.leftBtn.addEventListener('click', () => this.scrollLeft());
+            }
+            if (this.rightBtn) {
+                this.rightBtn.addEventListener('click', () => this.scrollRight());
+            }
+
+            if (this.container) {
+                this.container.addEventListener('scroll', utils.debounce(() => this.updateNavigationState(), 100));
+            }
+        },
+
+        scrollLeft() {
+            const scrollAmount = this.container.clientWidth * 0.8;
+            this.container.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        },
+
+        scrollRight() {
+            const scrollAmount = this.container.clientWidth * 0.8;
+            this.container.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        },
+
+        updateNavigationState() {
+            if (!this.container) return;
+
+            const { scrollLeft, scrollWidth, clientWidth } = this.container;
+
+            // Update left button
+            this.leftBtn.style.opacity = scrollLeft > 0 ? '0.7' : '0.3';
+            this.leftBtn.style.cursor = scrollLeft > 0 ? 'pointer' : 'not-allowed';
+
+            // Update right button
+            const isAtEnd = scrollLeft + clientWidth >= scrollWidth - 1;
+            this.rightBtn.style.opacity = isAtEnd ? '0.3' : '0.7';
+            this.rightBtn.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+        }
+    };
+
     // Initialize everything when DOM is loaded
     function init() {
         themeManager.init();
         languageManager.init();
         navigationManager.init();
         animationManager.init();
+        friendsScrollManager.init();
         
         // Add smooth scroll behavior to all internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

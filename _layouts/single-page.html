@@ -68,7 +68,15 @@ layout: compress
     <section class="friends-section">
       <div class="main-content">
         <h2 class="section-title" data-lang='{"en": "My Friends 😊", "zh": "我的朋友们 😊"}'>My Friends 😊</h2>
-        <div class="friends-grid">
+        <div class="friends-scroll-container">
+          <!-- Navigation buttons (hidden by default, shown when needed) -->
+          <button class="friends-nav friends-nav-left" id="friendsNavLeft" style="display: none;">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="friends-nav friends-nav-right" id="friendsNavRight" style="display: none;">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="friends-grid" id="friendsGrid">
           <div class="friend-card">
             <h3 class="friend-name">Mike Meng</h3>
             <p class="friend-info" data-lang='{"en": "SCUT | Energy Research", "zh": "华南理工大学 | 能源研究"}'>SCUT | Energy Research</p>
@@ -88,6 +96,7 @@ layout: compress
             <h3 class="friend-name">Yeez Zhang</h3>
             <p class="friend-info" data-lang='{"en": "SCUT | Reinforcement Learning", "zh": "华南理工大学 | 强化学习"}'>SCUT | Reinforcement Learning</p>
             <a href="https://enzoyeez.github.io" class="friend-link" target="_blank">enzoyeez.github.io</a>
+          </div>
           </div>
         </div>
       </div>
