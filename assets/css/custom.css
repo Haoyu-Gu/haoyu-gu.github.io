@@ -1081,3 +1081,87 @@ html {
 [data-theme="dark"] .cv-download-btn:hover {
   color: white !important;
 }
+
+/* Talk & Presentations enhanced formatting */
+.talk-title {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.talk-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: var(--bg-accent);
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.talk-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.meta-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.meta-label::after {
+  content: ':';
+  margin-left: 2px;
+}
+
+.meta-value {
+  color: var(--text-secondary);
+  flex: 1;
+  min-width: 0;
+}
+
+.talk-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive adjustments for talks */
+@media (max-width: 768px) {
+  .talk-meta {
+    padding: 0.75rem;
+  }
+  
+  .meta-label {
+    min-width: 60px;
+    font-size: 0.9rem;
+  }
+  
+  .meta-value {
+    font-size: 0.9rem;
+  }
+  
+  .talk-title {
+    font-size: 1.15rem;
+  }
+}
+
+/* Dark theme for talk meta */
+[data-theme="dark"] .talk-meta {
+  background: var(--bg-accent);
+  border-left-color: #8b9aee;
+}
