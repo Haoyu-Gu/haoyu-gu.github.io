@@ -1097,9 +1097,9 @@ html {
   gap: 0.75rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: var(--bg-secondary);
+  background: rgba(245, 247, 250, 0.6);
   border-radius: 8px;
-  border-left: 3px solid var(--border-color);
+  border-left: 3px solid #52c41a;
 }
 
 .talk-meta-item {
@@ -1164,6 +1164,6 @@ html {
 
 /* Dark theme for talk meta */
 [data-theme="dark"] .talk-meta {
-  background: var(--bg-secondary);
-  border-left-color: var(--border-color);
+  background: rgba(45, 45, 45, 0.5);
+  border-left-color: #73d13d;
 }
