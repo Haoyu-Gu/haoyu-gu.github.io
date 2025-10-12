@@ -478,6 +478,14 @@ body {
   font-size: 0.9rem;
 }
 
+.skill-description {
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  font-style: italic;
+}
+
 /* Contact section */
 .contact-grid {
   display: grid;
