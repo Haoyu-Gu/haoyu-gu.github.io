@@ -1175,3 +1175,11 @@ html {
   background: rgba(45, 45, 45, 0.5);
   border-left-color: #73d13d;
 }
+
+/* Award organizer */
+.award-organizer {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
