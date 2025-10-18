@@ -160,7 +160,8 @@
                 '.skill-item',                   // 所有技能项目
                 '.section-subtitle',             // 所有小标题
                 '.contact-item',                 // 所有联系项目
-                '.publication-card'              // 所有论文卡片
+                '.publication-card',             // 所有论文卡片
+                '.music-card'                    // 所有音乐卡片
             ].join(', '));
             
             animatableElements.forEach(el => observer.observe(el));
