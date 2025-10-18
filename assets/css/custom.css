@@ -1188,3 +1188,146 @@ html {
   margin-top: 0.5rem;
   opacity: 0.8;
 }
+
+/* Publications */
+.publication-card {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.publication-image {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.publication-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.publication-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #1e40af;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.publication-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.publication-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.publication-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.pub-venue {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.pub-role {
+  color: var(--text-accent);
+  font-weight: 500;
+}
+
+.publication-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.publication-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pub-btn {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 2px solid;
+}
+
+.pub-btn.pdf {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.pub-btn.pdf:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.pub-btn.code {
+  background: transparent;
+  color: #10b981;
+  border-color: #10b981;
+}
+
+.pub-btn.code:hover {
+  background: #10b981;
+  color: white;
+}
+
+.pub-btn.slides {
+  background: transparent;
+  color: #f59e0b;
+  border-color: #f59e0b;
+}
+
+.pub-btn.slides:hover {
+  background: #f59e0b;
+  color: white;
+}
+
+@media (max-width: 968px) {
+  .publication-card {
+    flex-direction: column;
+  }
+  
+  .publication-image {
+    width: 100%;
+    height: 250px;
+  }
+}
