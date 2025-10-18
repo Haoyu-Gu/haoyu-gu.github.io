@@ -137,28 +137,6 @@
         }
     };
 
-    // 音频播放器初始化
-    const audioManager = {
-        init() {
-            const audioPlayers = document.querySelectorAll('.music-player');
-            audioPlayers.forEach(audio => {
-                audio.volume = 1.0;
-                audio.load();
-                
-                audio.addEventListener('play', function() {
-                    audioPlayers.forEach(other => {
-                        if (other !== audio) other.pause();
-                    });
-                });
-                
-                audio.addEventListener('error', function(e) {
-                    console.error('Audio error:', e);
-                    this.load();
-                });
-            });
-        }
-    };
-
     // 动画管理器 - 确保全覆盖
     const animationManager = {
         init() {
@@ -226,7 +204,6 @@
         languageManager.init();
         navigationManager.init();
         animationManager.init();
-        audioManager.init();
         friendsManager.init();
         
         // Add smooth scroll behavior to all internal links
