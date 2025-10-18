@@ -66,6 +66,16 @@
                 }
             });
             
+            // 切换CV链接
+            const cvLink = document.querySelector('.cv-link');
+            if (cvLink) {
+                const enHref = cvLink.getAttribute('data-en-href');
+                const zhHref = cvLink.getAttribute('data-zh-href');
+                if (enHref && zhHref) {
+                    cvLink.href = this.currentLang === 'en' ? enHref : zhHref;
+                }
+            }
+            
             if (this.langToggle) {
                 this.langToggle.textContent = this.currentLang === 'en' ? '中文' : 'EN';
             }
