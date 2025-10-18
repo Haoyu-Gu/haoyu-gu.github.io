@@ -226,6 +226,7 @@
         languageManager.init();
         navigationManager.init();
         animationManager.init();
+        audioManager.init();
         friendsManager.init();
         
         // Add smooth scroll behavior to all internal links
