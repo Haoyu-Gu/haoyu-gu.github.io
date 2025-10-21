@@ -208,25 +208,6 @@ body {
   padding-bottom: 1rem;
 }
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, var(--link-color), #8b5cf6);
-  border-radius: 2px;
-}
-
-/* 移除研究相关section的标题下划线 */
-#research .section-title::after,
-#research-experience .section-title::after,
-#outputs .section-title::after {
-  display: none;
-}
-
 .section-subtitle {
   font-size: 1.2rem;
   color: var(--text-secondary);
