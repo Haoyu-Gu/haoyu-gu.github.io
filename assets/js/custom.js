@@ -116,11 +116,17 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        const activeNavItem = document.querySelector(`a[href="#${entry.target.id}"]`);
-                        
+                        const sectionId = entry.target.id;
+
+                        // 研究相关的section（研究方向、研究经历、研究成果）统一激活"研究"菜单项
+                        const researchSections = ['research', 'research-experience', 'outputs'];
+                        const targetId = researchSections.includes(sectionId) ? 'research' : sectionId;
+
+                        const activeNavItem = document.querySelector(`a[href="#${targetId}"]`);
+
                         // Remove active class from all nav items
                         this.navItems.forEach(item => item.classList.remove('active'));
-                        
+
                         // Add active class to current nav item
                         if (activeNavItem) {
                             activeNavItem.classList.add('active');
@@ -130,7 +136,7 @@
             }, {
                 rootMargin: '-50% 0px -50% 0px'
             });
-            
+
             this.sections.forEach(section => {
                 observer.observe(section);
             });
