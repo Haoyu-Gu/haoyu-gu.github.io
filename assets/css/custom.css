@@ -1251,7 +1251,7 @@ html {
   transform: translateY(0);
 }
 
-.music-card.animate-in:hover {
+.music-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 20px var(--shadow-color);
 }
