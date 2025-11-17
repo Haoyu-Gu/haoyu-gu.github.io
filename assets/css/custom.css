@@ -569,6 +569,27 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.friend-location {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+  line-height: 1.2;
+}
+
+.friend-university {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+  line-height: 1.2;
+}
+
+.friend-research {
+  font-size: 0.85rem;
+  color: var(--text-accent);
+  margin: 0.25rem 0 0.75rem 0;
+  line-height: 1.2;
+}
+
 .friend-link {
   color: var(--link-color);
   text-decoration: none;
