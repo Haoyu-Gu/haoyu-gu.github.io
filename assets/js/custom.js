@@ -167,9 +167,7 @@
                 '.section-subtitle',             // 所有小标题
                 '.contact-item',                 // 所有联系项目
                 '.publication-card',             // 所有论文卡片
-                '.music-card',                   // 所有音乐卡片
-                '.music-card-dual',              // 双播放器音乐卡片
-                '.output-block'                  // 输出区块
+                '.music-card'                    // 所有音乐卡片
             ].join(', '));
             
             animatableElements.forEach(el => observer.observe(el));
