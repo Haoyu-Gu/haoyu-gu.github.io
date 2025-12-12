@@ -204,6 +204,26 @@
         }
     };
 
+    // Audio manager - ensures only one audio plays at a time
+    const audioManager = {
+        init() {
+            this.audioElements = document.querySelectorAll('audio');
+            this.currentlyPlaying = null;
+
+            this.audioElements.forEach(audio => {
+                audio.addEventListener('play', () => this.handlePlay(audio));
+            });
+        },
+
+        handlePlay(audio) {
+            // Pause the previously playing audio if different from current
+            if (this.currentlyPlaying && this.currentlyPlaying !== audio) {
+                this.currentlyPlaying.pause();
+            }
+            this.currentlyPlaying = audio;
+        }
+    };
+
     // Initialize everything when DOM is loaded
     function init() {
         themeManager.init();
@@ -211,6 +231,7 @@
         navigationManager.init();
         animationManager.init();
         friendsManager.init();
+        audioManager.init();
         
         // Add smooth scroll behavior to all internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -243,6 +264,7 @@
         languageManager,
         navigationManager,
         animationManager,
+        audioManager,
         utils
     };
 })();
